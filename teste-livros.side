@@ -1,0 +1,110 @@
+{
+  "id": "58a7d643-0327-4a91-9986-f218ca98f19b",
+  "name": "Teste Livros",
+  "url": "",
+  "tests": [{
+    "id": "440c4b7d-d742-4849-9749-f00ddb43069c",
+    "name": "teste-livros",
+    "commands": [{
+      "id": "9887640c-ec83-477a-adf7-a434307001fb",
+      "comment": "Abrir Submarino.com.br",
+      "command": "open",
+      "target": "https://www.submarino.com.br",
+      "value": ""
+    }, {
+      "id": "17b5cfd2-9621-4b37-a4ed-71317936a1fe",
+      "comment": "Sessão 'Livros'",
+      "command": "clickAt",
+      "target": "xpath=(//a[contains(text(),'Livros')])[5]",
+      "value": "Livros"
+    }, {
+      "id": "4d273664-00c5-480c-ab84-f720f4eef5c3",
+      "comment": "Anuncio do Livro",
+      "command": "click",
+      "target": "css=h1.card-product-name",
+      "value": ""
+    }, {
+      "id": "49445d39-3dfe-4eb7-8db5-564abe1c23bc",
+      "comment": "Salvar Autor",
+      "command": "storeText",
+      "target": "//tr[3]/td[2]",
+      "value": "autor"
+    }, {
+      "id": "6f407d3c-722e-4701-87fe-a1ddad11f018",
+      "comment": "Salvar Codigo ISBN",
+      "command": "storeText",
+      "target": "//tr[2]/td[2]",
+      "value": "codigo_isbn"
+    }, {
+      "id": "0d5f42b8-d718-49b1-9add-3cf50b46c50d",
+      "comment": "Abrir Americanas.com.br",
+      "command": "open",
+      "target": "https://www.americanas.com.br",
+      "value": ""
+    }, {
+      "id": "2d22b17c-8a64-4ea1-8923-43f708e0522a",
+      "comment": "Pesquisar por Codigo ISBN",
+      "command": "type",
+      "target": "id=h_search-input",
+      "value": "${codigo_isbn}"
+    }, {
+      "id": "1c844aac-0ffb-4371-bace-a175180e84f3",
+      "comment": "Buscar Livro",
+      "command": "clickAt",
+      "target": "id=h_search-btn",
+      "value": ""
+    }, {
+      "id": "f137e6d2-6f74-43ef-8e04-5b6b80f08d90",
+      "comment": "Anuncio do Livro",
+      "command": "click",
+      "target": "css=h1.card-product-name",
+      "value": ""
+    }, {
+      "id": "cdfc72b3-d6ea-40d7-9fbb-92b7a7e73cf0",
+      "comment": "Comparar Autor",
+      "command": "assertText",
+      "target": "//tr[3]/td[2]",
+      "value": "${autor}"
+    }, {
+      "id": "2af5edec-cdc6-4c48-a48d-e3746f977e07",
+      "comment": "Abrir Amazon.com.br",
+      "command": "open",
+      "target": "https://www.amazon.com.br",
+      "value": ""
+    }, {
+      "id": "c13bd5d6-2c13-49f9-822b-504152b40d4b",
+      "comment": "Pesquisar por Codigo ISBN",
+      "command": "type",
+      "target": "id=twotabsearchtextbox",
+      "value": "${codigo_isbn}"
+    }, {
+      "id": "d191beae-0445-49e7-acc5-aa5dff8f756b",
+      "comment": "Buscar Livro",
+      "command": "clickAt",
+      "target": "css=input.nav-input",
+      "value": ""
+    }, {
+      "id": "3a7548c7-d8d0-414d-9a3a-7aa9adc38fa9",
+      "comment": "Anuncio do Livro",
+      "command": "click",
+      "target": "css=span.a-size-medium.a-color-base",
+      "value": ""
+    }, {
+      "id": "30601d29-ac8a-4bac-8b59-9b320a22e4cd",
+      "comment": "Comparar Autor",
+      "command": "assertText",
+      "target": "css=span.author.notFaded > a.a-link-normal",
+      "value": "${autor}"
+    }]
+  }],
+  "suites": [{
+    "id": "febbab4e-eb3b-4d9e-9ac0-eb91c83f2f0b",
+    "name": "Default Suite",
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["440c4b7d-d742-4849-9749-f00ddb43069c"]
+  }],
+  "urls": [],
+  "plugins": [],
+  "version": "1.0"
+}
